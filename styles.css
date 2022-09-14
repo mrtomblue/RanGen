@@ -1,3 +1,5 @@
+body {}
+
 .main__window {
     /* RanGen Mockup */
     box-sizing: border-box;
@@ -116,4 +118,54 @@
     flex: none;
     order: 0;
     flex-grow: 1;
+}
+
+.random__string--output__text p {
+    width: 98px;
+    height: 15px;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 15px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #121212;
+    opacity: 0.4;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.icon__button {
+    /* icons/24/reg/ */
+    width: 24px;
+    height: 24px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 8px rgba(233, 239, 242, 0.5), -1px -1px 8px rgba(242, 242, 242, 0.2), inset -4px -4px 8px rgba(242, 242, 242, 0.5), inset 4px 4px 8px rgba(233, 239, 242, 0.2);
+    border-radius: 4px;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    /* icons/24/reg/ */
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 8px rgba(233, 239, 242, 0.5), -1px -1px 8px rgba(242, 242, 242, 0.2), inset -4px -4px 8px rgba(242, 242, 242, 0.5), inset 4px 4px 8px rgba(233, 239, 242, 0.2);
+    border-radius: 4px;
+    /* Inside auto layout */
+    flex: none;
+    flex-grow: 0;
+}
+
+.reload {
+    order: 2;
+}
+
+.clipboard-copy {
+    order: 3;
 }
