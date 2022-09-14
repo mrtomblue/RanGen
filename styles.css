@@ -1,0 +1,20 @@
+.main__window {
+    /* RanGen Mockup */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    gap: 24px;
+    position: relative;
+    width: 420px;
+    height: 414px;
+    /* Light Mode - Glass */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 100%);
+    box-shadow: -5px 25px 50px rgba(134, 178, 255, 0.1);
+    backdrop-filter: blur(30px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 24px;
+}
