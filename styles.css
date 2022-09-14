@@ -61,6 +61,7 @@
 }
 
 .main__window--footer {
+    /* Frame 178 */
     /* Auto layout */
     display: flex;
     flex-direction: row;
@@ -78,4 +79,41 @@
     order: 2;
     align-self: stretch;
     flex-grow: 0;
+}
+
+.random__string--output {
+    /* Frame 6 */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px;
+    gap: 8px;
+    width: 348px;
+    height: 40px;
+    /* Light Mode - 3D "negative" Shadows v2 */
+    box-shadow: inset 4px 4px 8px rgba(242, 242, 242, 0.5), inset -4px -4px 8px rgba(233, 239, 242, 0.2);
+    filter: drop-shadow(-1px -1px 8px rgba(233, 239, 242, 0.5)) drop-shadow(1px 1px 8px rgba(242, 242, 242, 0.2));
+    border-radius: 8px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.random__string--output__text {
+    /* space */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 236px;
+    height: 24px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 1;
 }
