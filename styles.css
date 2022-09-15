@@ -2,7 +2,11 @@
 OVERVIEW
 */
 
-body {}
+body {
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+}
 
 .main__window {
     /* RanGen Mockup */
@@ -98,17 +102,7 @@ body {}
     height: 24px;
     background: #FFFFFF;
     box-shadow: 1px 1px 8px rgba(233, 239, 242, 0.5), -1px -1px 8px rgba(242, 242, 242, 0.2), inset -4px -4px 8px rgba(242, 242, 242, 0.5), inset 4px 4px 8px rgba(233, 239, 242, 0.2);
-    border-radius: 4px;
-    /* Inside auto layout */
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-    /* icons/24/reg/ */
     box-sizing: border-box;
-    width: 24px;
-    height: 24px;
-    background: #FFFFFF;
-    box-shadow: 1px 1px 8px rgba(233, 239, 242, 0.5), -1px -1px 8px rgba(242, 242, 242, 0.2), inset -4px -4px 8px rgba(242, 242, 242, 0.5), inset 4px 4px 8px rgba(233, 239, 242, 0.2);
     border-radius: 4px;
     /* Inside auto layout */
     flex: none;
