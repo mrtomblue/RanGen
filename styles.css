@@ -192,3 +192,35 @@ body {
     align-self: stretch;
     flex-grow: 0;
 }
+
+.main__window--header {
+    /* Frame 187 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+    width: 214px;
+    height: 20px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.main__window--header__text {
+    /* RanGen */
+    width: 67px;
+    height: 18px;
+    font-size: 20px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: rgba(18, 18, 18, 0.8);
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
