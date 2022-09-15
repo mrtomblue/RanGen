@@ -6,6 +6,7 @@ body {
     font-family: 'League Spartan';
     font-style: normal;
     font-weight: 400;
+    background: #E5E5E5;
 }
 
 .main__window {
@@ -222,5 +223,22 @@ body {
     /* Inside auto layout */
     flex: none;
     order: 1;
+    flex-grow: 0;
+}
+
+.main__window--header__darkmode {
+    /* Frame 188 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+    width: 110px;
+    height: 20px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
     flex-grow: 0;
 }
