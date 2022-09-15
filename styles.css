@@ -7,11 +7,11 @@ body {
     font-style: normal;
     font-weight: 400;
     background: #E5E5E5;
+    box-sizing: border-box;
 }
 
 .main__window {
     /* RanGen Mockup */
-    box-sizing: border-box;
     /* Auto layout */
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ body {
     gap: 24px;
     position: relative;
     width: 420px;
-    height: 414px;
+    height: fit-content;
     /* Light Mode - Glass */
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 100%);
     box-shadow: -5px 25px 50px rgba(134, 178, 255, 0.1);
@@ -39,15 +39,15 @@ body {
     align-items: center;
     padding: 12px;
     gap: 24px;
-    width: 372px;
-    height: 44px;
+    width: max-content;
+    height: fit-content;
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 1px 1px 8px rgba(233, 239, 242, 0.4), -1px -1px 8px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(255, 255, 255, 0.4), inset 4px 4px 8px rgba(233, 239, 242, 0.4);
     border-radius: 12px;
     /* Inside auto layout */
     flex: none;
     order: 0;
-    align-self: stretch;
+    /* align-self: stretch; */
     flex-grow: 0;
 }
 
