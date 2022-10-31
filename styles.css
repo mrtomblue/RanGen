@@ -750,7 +750,7 @@ input[type=range]:focus::-ms-fill-upper {
 .random__string--input__character--length__text input {
     width: auto;
     max-width: 48rem;
-    height: 16rem;
+    height: 20rem;
     font-size: 16rem;;
     line-height: 15rem;
     color: #121212;
