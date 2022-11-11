@@ -1022,3 +1022,228 @@ div:focus-within:only-child {
     outline-offset: 2rem;
     outline-style: dashed;
 } */
+
+.gradient__border--alt__wrapper::before{
+        /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    /* padding: 8rem;
+    gap: 8rem; */
+    width: fit-content;
+    height: fit-content;
+
+    /* border: var(--border-default); */
+    /* border-radius:  var(--size-3); */
+
+    /* Inside auto layout */
+    /* flex: none; */
+    /* order: 0; */
+    /* align-self: stretch;
+    flex-grow: 1; */
+    content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  margin: -2rem;
+  /* background-image: linear-gradient(45deg, purple, orange); */
+  background-image: var(--border-gradient-1);
+}
+
+.gradient__border--alt__wrapper:nth-child(1) {
+    order: 0;
+}
+
+.gradient__border--alt__wrapper:nth-child(2) {
+    order: 1;
+}
+
+
+.gradient__border, .gradient__border--alt {
+    position: relative;
+}
+    
+
+.gradient__border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+
+  margin: -2rem;
+  /* background-image: linear-gradient(45deg, purple, orange); */
+  background-image: var(--border-gradient-1);
+}
+
+
+.random__string--output{
+    background-color: #ffffff;
+    border-radius: calc(var(--size-3) - 2rem);
+
+}
+
+.random__string--output::before{
+    border-radius: var(--size-3);
+}
+
+.random__string--input__container{
+    background-color: #ffffff;
+    border-radius: calc(var(--size-3) - 2rem);
+}
+
+.random__string--input__container::before{
+    border-radius: var(--size-3);
+}
+
+.random__string--input__characters--start input, 
+.random__string--input__characters--end input{
+    /* position: relative; */
+    background-color: #ffffff;
+    border-radius: calc(var(--size-4) - 2rem);
+    z-index: 2;
+    margin: 2rem;
+}
+
+.random__string--input__characters--start, 
+.random__string--input__characters--end {
+/* content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1; */
+
+
+  /* margin: -2rem; */
+  /* background-image: linear-gradient(45deg, purple, orange); */
+  background-image: var(--border-gradient-1);
+
+
+    border-radius: var(--size-4);
+    /* z-index: -1; */
+}
+
+
+.main__window {
+    background: var(--background-2);
+    box-shadow: var(--box-shadow-2);
+    backdrop-filter: var(--background-blur-1);
+    -webkit-backdrop-filter: var(--background-blur-1);
+}
+
+.main__window--header, 
+.main__window--body, 
+.main__window--footer {
+    background: var(--background-1);
+    box-shadow: var(--box-shadow-1);
+}
+
+.Checkbox--Alt__button {
+    border: none;
+    border-radius: 4rem;
+  /* background-image: linear-gradient(45deg, purple, orange); */
+  background-image: var(--border-gradient-1);
+}
+
+.Checkbox--Alt__button--inside { 
+ background-color: #ffffff;
+  margin: 2rem;
+    border-radius: 2rem;
+}
+
+button:hover {
+    opacity: 70%;
+    /* border: #ffffff 2px dashed; */
+    outline-color: #ffffff;
+    outline-offset: 1rem;
+    outline-offset: 1rem;
+    /* outline-style: dotted; */
+    /* position: absolute; */
+    /* width: 110%;
+    height: 110%; */
+    cursor: pointer;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    color: #ffffff;
+    font-size: 14rem;
+    top: 32rem;
+    z-index: 4;
+    /* cursor: default; */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    /* width: fit-content; */
+    /* animation: tooltip var(--quinary-animation-speed) ease-in-out forwards; */
+}
+
+.tooltip__arrow {
+    display: none;
+    position: absolute;
+    /* margin-bottom: 23rem;
+    margin-left: 8rem; */
+    top: -4rem;
+    left: 8rem;
+    /* top: 8rem;
+    right: -8rem; */
+    /* rotate: 90deg; */
+    /* animation: tooltiparrow var(--quinary-animation-speed) ease-in-out forwards; */
+}
+
+.tooltip__text {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: flex-start;
+    width: auto;
+    height: 24rem;
+    padding: 4rem;
+
+    background-color: var(--color-dark);
+    border: var(--border-default);
+    border-radius: var(--size-4);
+
+    flex: none;
+    align-self: stretch;
+    flex-grow: 1;
+
+    /* animation: tooltip var(--quinary-animation-speed) ease-in-out forwards; */
+}
+
+@keyframes tooltip {
+    0%{
+        opacity: 50%;
+        width: 24rem;
+        overflow: hidden;
+        top: -8rem;
+    }
+    100%{
+        opacity: 100%;
+        /* width: 30rem; */
+    }
+}
+
+@keyframes tooltiparrow {
+    0%{
+        opacity: 50%;
+        /* width: 24rem; */
+        /* overflow: hidden; */
+        top: -8rem;
+    }
+    100%{
+        opacity: 100%;
+        /* width: 30rem; */
+    }
+}
+
