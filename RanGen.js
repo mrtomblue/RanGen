@@ -9,8 +9,8 @@ const symbols = ["@", "#", "*", "%", "$", "!", "-", "_", "@", "#", "*", "%", "$"
 
 let startCharacters = "";
 let endCharacters = "";
-let startCharactersStatus = "";
-let endCharactersStatus = "";
+// let startCharactersStatus = "";
+// let endCharactersStatus = "";
 
 let lengthLimit = 200
 
@@ -22,9 +22,12 @@ const gen64 = (length, hasUppercase, hasLowercase, hasNumbers, hasSymbols, hasSt
         ...(hasSymbols ? symbols : []),
         // hasStartCharacters = startCharacters,
         // hasEndCharacters = endCharacters,
-        ...(hasStartCharacters ? startCharacters : []),
-        ...(hasEndCharacters ? endCharacters : []),
+        // ...(hasStartCharacters ? startCharacters : []),
+        // ...(hasEndCharacters ? endCharacters : []),
     ];
+
+    // (hasStartCharacters ? startCharacters : [])
+    // (hasEndCharacters ? endCharacters : [])
 
     // console.log(hasStartCharacters)
     // console.log(hasEndCharacters)
@@ -39,7 +42,9 @@ const gen64 = (length, hasUppercase, hasLowercase, hasNumbers, hasSymbols, hasSt
     // if (availableCharacters.length === 0) return "invalid input";
 
     for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * availableCharacters.length);
+        const randomIndex = Math.floor(
+            Math.random() * availableCharacters.length
+        );
         preProcessedNumbStfr += availableCharacters[randomIndex];
     }
 
@@ -50,7 +55,7 @@ const gen64 = (length, hasUppercase, hasLowercase, hasNumbers, hasSymbols, hasSt
     // };
 
     // if (startCharacters == true && endCharacters == true) {
-        // let numStfr = `${hasStartCharacters} + ${preProcessedNumbStfr} + ${hasEndCharacters}`;
+    // let numStfr = `${hasStartCharacters} + ${preProcessedNumbStfr} + ${hasEndCharacters}`;
     // }
 
     if (hasStartCharacters !== false) {
@@ -69,7 +74,8 @@ const gen64 = (length, hasUppercase, hasLowercase, hasNumbers, hasSymbols, hasSt
     //     endCharacters = "";
     // }
 
-    let numStfr = startCharacters + preProcessedNumbStfr + endCharacters;
+    // let numStfr = startCharacters + preProcessedNumbStfr + endCharacters;
+    let numStfr = `${startCharacters}${preProcessedNumbStfr}${endCharacters}`;
 
     // console.log(startCharacters);
     // console.log(endCharacters);
@@ -129,7 +135,10 @@ let checkboxNumbers = document.getElementById("Option_Numbers-Checkbox");
 let checkboxSymbols = document.getElementById("Option_Symbols-Checkbox");
 let inputStartCharacters = document.getElementById("Option_Character-Start");
 let inputEndCharacters = document.getElementById("Option_Character-End");
-// let checkboxUppercaseChecked = document.getElementById("Option_Uppercase-Checkbox").ariaChecked;
+let checkboxUppercaseAlt = document.getElementById("Option_Uppercase-Checkbox--Alt__button");
+let checkboxLowercaseAlt = document.getElementById("Option_Lowercase-Checkbox--Alt__button");
+let checkboxNumbersAlt = document.getElementById("Option_Numbers-Checkbox--Alt__button");
+let checkboxSymbolsAlt = document.getElementById("Option_Symbols-Checkbox--Alt__button");
 
 inputRange.addEventListener("input", (e) => {
     // onchange ...
@@ -140,7 +149,7 @@ inputRange.addEventListener("input", (e) => {
     // console.log(range);
     inputRange.style.setProperty(
         "--input-range-filled",
-        `${inputRange.value / 2}%`
+        `${inputRange.value / 2.095 + 2}%`
     );
 
     // document.getElementById("Option_Length-RangeSlider_Text-input").value = GenLength;
@@ -170,7 +179,7 @@ inputRangeText.addEventListener("change", (e) => {
     // console.log(rangeText);
     inputRange.style.setProperty(
         "--input-range-filled",
-        `${inputRange.value / 2}%`
+        `${inputRange.value / 2.095 + 2}%`
     );
 
     // document.getElementById("Option_Length-RangeSlider_Text-input").value =
@@ -188,9 +197,75 @@ inputRefresh.addEventListener("click", (e) => {
     updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
 });
 
-checkboxUppercase.addEventListener("change", (e) => {
+// checkboxUppercase.addEventListener("change", (e) => {
+//     // onchange ...
+    
+//     // checkboxUppercaseAlt.value = e.target.checked;
+
+//         switch (checkboxUppercaseAlt.value) {
+//             case false:
+//                 // e.target.checked = true
+//                 document.getElementById(
+//                     "Option_Uppercase-Checkbox--Alt__check"
+//                 ).style.visibility = "hidden";
+//                 break;
+//             case true:
+//                 // e.target.checked = false
+//                 document.getElementById(
+//                     "Option_Uppercase-Checkbox--Alt__check"
+//                 ).style.visibility = "visible";
+//                 break;
+//         }
+
+//     GenUppercase = e.target.checked;
+
+//     range = document.getElementById(
+//         "Option_Length-RangeSlider_Text-input"
+//     ).value;
+
+//     // document.getElementById("Option_Length-RangeSlider").value = range;
+//     // console.log("heheh change ig");
+
+//     // document.getElementById("Option_Length-RangeSlider_Text-input").value =
+//     // GenLength;
+//     // GenLength = range;
+
+//     console.log(GenUppercase);
+
+//     updateCheckboxAlts();
+
+//     updateOutput(
+//         range,
+//         GenUppercase,
+//         GenLowercase,
+//         GenNumbers,
+//         GenSymbols,
+//         GenStartCharacters,
+//         GenEndCharacters
+//     );
+// });
+
+checkboxUppercaseAlt.addEventListener("click", (e) => {
     // onchange ...
-    GenUppercase = e.target.checked;
+    // GenUppercase = e.target.checked;
+
+    // e.target.value = checkboxUppercase.checked ? true : false;
+
+    switch (checkboxUppercase.checked) {
+        case false:
+            e.target.value = true;
+            checkboxUppercase.checked = true
+            document.getElementById('Option_Uppercase-Checkbox--Alt__check').style.visibility = "visible"
+            break;
+        case true:
+            e.target.value = false;
+            checkboxUppercase.checked = false
+            document.getElementById("Option_Uppercase-Checkbox--Alt__check").style.visibility = "hidden";
+            break;
+    }
+
+
+    GenUppercase = checkboxUppercase.checked;
 
     range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
 
@@ -201,43 +276,144 @@ checkboxUppercase.addEventListener("change", (e) => {
     // GenLength;
     // GenLength = range;
 
-    console.log(GenUppercase);
+    // console.log(GenUppercase);
+    console.log(e.target.value);
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+    // updateCheckboxAlts();
+
+    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols,  GenStartCharacters, GenEndCharacters);
 });
 
-checkboxLowercase.addEventListener("change", (e) => {
+// checkboxLowercase.addEventListener("change", (e) => {
+//     // onchange ...
+//     GenLowercase = e.target.checked;
+//     range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
+//     // document.getElementById("Option_Length-RangeSlider").value = range;
+//     console.log("heheh change ig");
+//     console.log(GenLowercase);
+
+//     updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+// });
+
+
+checkboxLowercaseAlt.addEventListener("click", (e) => {
     // onchange ...
-    GenLowercase = e.target.checked;
-    range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
-    // document.getElementById("Option_Length-RangeSlider").value = range;
-    console.log("heheh change ig");
-    console.log(GenLowercase);
+    // GenUppercase = e.target.checked;
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+    // e.target.value = checkboxUppercase.checked ? true : false;
+
+    switch (checkboxLowercase.checked) {
+        case false:
+            e.target.value = true;
+            checkboxLowercase.checked = true;
+            document.getElementById("Option_Lowercase-Checkbox--Alt__check").style.visibility = "visible";
+            break;
+        case true:
+            e.target.value = false;
+            checkboxLowercase.checked = false;
+            document.getElementById("Option_Lowercase-Checkbox--Alt__check").style.visibility = "hidden";
+            break;
+    }
+
+    GenLowercase = checkboxLowercase.checked;
+
+    range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
+    console.log(e.target.value);
+
+    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols,  GenStartCharacters, GenEndCharacters);
 });
 
-checkboxNumbers.addEventListener("change", (e) => {
+// checkboxNumbers.addEventListener("change", (e) => {
+//     // onchange ...
+//     GenNumbers = e.target.checked;
+//     range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
+//     // document.getElementById("Option_Length-RangeSlider").value = range;
+//     console.log("heheh change ig");
+//     console.log(GenNumbers);
+
+//     updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+// });
+
+
+checkboxNumbersAlt.addEventListener("click", (e) => {
     // onchange ...
-    GenNumbers = e.target.checked;
-    range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
-    // document.getElementById("Option_Length-RangeSlider").value = range;
-    console.log("heheh change ig");
-    console.log(GenNumbers);
+    // GenUppercase = e.target.checked;
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+    // e.target.value = checkboxUppercase.checked ? true : false;
+
+    switch (checkboxNumbers.checked) {
+        case false:
+            e.target.value = true;
+            checkboxNumbers.checked = true;
+            document.getElementById(
+                "Option_Numbers-Checkbox--Alt__check"
+            ).style.visibility = "visible";
+            break;
+        case true:
+            e.target.value = false;
+            checkboxNumbers.checked = false;
+            document.getElementById(
+                "Option_Numbers-Checkbox--Alt__check"
+            ).style.visibility = "hidden";
+            break;
+    }
+
+    GenNumbers = checkboxNumbers.checked;
+
+    range = document.getElementById(
+        "Option_Length-RangeSlider_Text-input"
+    ).value;
+    console.log(e.target.value);
+
+    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols,  GenStartCharacters, GenEndCharacters);
 });
 
-checkboxSymbols.addEventListener("change", (e) => {
+
+// checkboxSymbols.addEventListener("change", (e) => {
+//     // onchange ...
+//     GenSymbols = e.target.checked;
+//     range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
+//     // document.getElementById("Option_Length-RangeSlider").value = range;
+//     console.log("heheh change ig");
+//     console.log(GenSymbols);
+
+//     updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+// });
+
+
+checkboxSymbolsAlt.addEventListener("click", (e) => {
     // onchange ...
-    GenSymbols = e.target.checked;
-    range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
-    // document.getElementById("Option_Length-RangeSlider").value = range;
-    console.log("heheh change ig");
-    console.log(GenSymbols);
+    // GenUppercase = e.target.checked;
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+    // e.target.value = checkboxUppercase.checked ? true : false;
+
+    switch (checkboxSymbols.checked) {
+        case false:
+            e.target.value = true;
+            checkboxSymbols.checked = true;
+            document.getElementById(
+                "Option_Symbols-Checkbox--Alt__check"
+            ).style.visibility = "visible";
+            break;
+        case true:
+            e.target.value = false;
+            checkboxSymbols.checked = false;
+            document.getElementById(
+                "Option_Symbols-Checkbox--Alt__check"
+            ).style.visibility = "hidden";
+            break;
+    }
+
+    GenSymbols = checkboxSymbols.checked;
+
+    range = document.getElementById(
+        "Option_Length-RangeSlider_Text-input"
+    ).value;
+    console.log(e.target.value);
+
+    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols,  GenStartCharacters, GenEndCharacters);
 });
+
 
 inputStartCharacters.addEventListener("change", (e) => {
     GenStartCharacters = e.target.value
@@ -275,21 +451,23 @@ function updateOutput(inRange, inUppercase, inLowercase, inNumbers, inSymbols, i
 
     if (document.getElementById("Option_Length-Error").style.display == "flex") {
         
-        const errorStyleDisplayNone = () => document.getElementById("Option_Length-Error").style.display = "none";
+        const errorStyleDisplayNone = () => { document.getElementById("Option_Length-Error").style.display = "none" };
 
         document.getElementById("Option_Length-Error").style.animationDelay = "3s";
-        document.getElementById("Option_Length-Error").style.animation = "error-hidden var(--uc-quinary-animation-speed) forwards";
+        document.getElementById("Option_Length-Error").style.animation =
+            "error-hidden var(--quinary-animation-speed) ease-in forwards";
         console.log("hmm flex")
         setTimeout(errorStyleDisplayNone, 100)
         // document.getElementById("Option_Length-Error").style.display = "none";
     }
 
     if (document.getElementById("Option_Character-Error").style.display == "flex") {
-        const errorStyleDisplayNone = () => (document.getElementById("Option_Character-Error").style.display ="none");
+        const errorStyleDisplayNone = () => { document.getElementById("Option_Character-Error").style.display = "none" };
 
         document.getElementById("Option_Character-Error").style.animationDelay = "3s";
-        document.getElementById("Option_Character-Error").style.animation = "error-hidden var(--uc-quinary-animation-speed) forwards";
-        console.log("hmm flex");
+        document.getElementById("Option_Character-Error").style.animation =
+            "error-hidden var(--quinary-animation-speed) ease-in forwards";
+        console.log("hmm flex 2");
         setTimeout(errorStyleDisplayNone, 100);
         // document.getElementById("Option_Length-Error").style.display = "none";
     }
@@ -309,7 +487,8 @@ function updateOutput(inRange, inUppercase, inLowercase, inNumbers, inSymbols, i
         document.getElementById("Option_Length-RangeSlider_Text-input").style.fontFamily = "var(--font-code)";
         document.getElementById("Option_Length-RangeSlider_Text-input").style.color = "var(--color-error)"; 
         document.getElementById("Option_Length-Error").style.display = "flex";
-        document.getElementById("Option_Length-Error").style.animation = "error var(--uc-quinary-animation-speed) forwards";
+        document.getElementById("Option_Length-Error").style.animation =
+            "error var(--quinary-animation-speed) ease-in forwards";
     }
 
     if (GenUppercase === false & GenLowercase === false && GenNumbers === false && GenSymbols === false) {
@@ -327,7 +506,7 @@ function updateOutput(inRange, inUppercase, inLowercase, inNumbers, inSymbols, i
         document.getElementById("Option_Character-Error").style.display =
             "flex";
         document.getElementById("Option_Character-Error").style.animation =
-            "error var(--uc-quinary-animation-speed) forwards";
+            "error var(--quinary-animation-speed) ease-in forwards";
     }
 
     // inputError(1, false, "value");
@@ -385,4 +564,32 @@ function inputError(errorType, errorVersion) {
         errorT
     );
 }
- 
+
+function inputErrorStyle(elementSelectedType, elementSelected) {
+
+    switch (elementSelectedType) {
+        case "id":
+            document.getElementById(elementSelected)
+            break;
+    }
+
+    const errorStyleDisplayNone = () => {
+        elementSelectedType.style.display = "none";
+    };
+
+    elementSelectedType.style.animationDelay = "3s";
+    elementSelectedType.style.animation =
+        "error-hidden var(--quinary-animation-speed) ease-in forwards";
+    console.log("hmm flex");
+    setTimeout(errorStyleDisplayNone, 100);
+    // document.getElementById("Option_Length-Error").style.display = "none";
+}
+
+
+// function updateCheckboxAlts() {
+
+    
+//     if (GenUppercase === false) {
+//         console.log("eheh crapped fallacy")
+//     }
+// }
