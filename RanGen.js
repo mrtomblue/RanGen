@@ -593,3 +593,31 @@ function inputErrorStyle(elementSelectedType, elementSelected) {
 //         console.log("eheh crapped fallacy")
 //     }
 // }
+
+
+window.onload = () => {
+    document.getElementById("RanGen_Snack-Container--977543").style.display = "flex"
+
+    let snackbarClose = document.getElementById("RanGen_Snack-End_Button--977543")
+    const snackbarTimerTime = 10000
+
+    const snackbarDisplayNone = () => {
+        document.getElementById("RanGen_Snack-Container--977543").style.display = "none"
+    }
+    
+    const snackbarDisplayNoneAnimation = () => {
+        document.getElementById("RanGen_Snack--977543").style.animation = "snackbar-hidden var(--quinary-animation-speed) ease-in forwards";
+            setTimeout(snackbarDisplayNone, 100);
+    }
+
+    const snackbarOptionOneAction = () => {
+        document.getElementById("RanGen_Snack-Container--560392").style.display = "flex";
+        snackbarDisplayNone();
+    }
+
+    snackbarClose.addEventListener("click", (e) => {snackbarDisplayNoneAnimation()});
+
+    document.getElementById("RanGen_Snack-Timer_Inner--977543").style.animationDuration = `${snackbarTimerTime}ms`
+
+    setTimeout(snackbarDisplayNoneAnimation, snackbarTimerTime);
+}

@@ -1247,3 +1247,207 @@ button:hover {
     }
 }
 
+
+
+.RanGen__Snackbar--section {
+    /* font-size: 16rem; */
+    position: absolute;
+    bottom: 12rem;
+    left: 12rem;
+}
+
+.RanGen__Snackbar--container{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* border: var(--border-default);
+    border-radius: var(--size-2); */
+
+    width: fit-content;
+    height: fit-content;
+    font-size: 16rem;
+    /* padding: 12rem; */
+    /* gap: var(--size-4); */
+    overflow: hidden;
+}
+
+.RanGen__Snackbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* padding: clamp(var(--size-4), var(--size-3), var(--size-2)); */
+    padding: 8rem;
+    gap: var(--size-2);
+
+    border: var(--border-default);
+    border-radius: var(--size-2);
+
+    background-color: #121212;
+    color: #E5E5E5;
+
+    max-width: 400rem;
+    min-width: 96rem;
+    /* min-height: 24rem; */
+    min-height: 30rem;
+    height: fit-content;
+    width: fit-content;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.RanGen__Snackbar--start,
+.RanGen__Snackbar--end,
+.RanGen__Snackbar--start__button,
+.RanGen__Snackbar--end__button{
+    width: 24rem;
+    height: 24rem;
+    /* border: var(--border-default); */
+    /* border-color: #E5E5E5; */
+    flex:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#RanGen_Snack-Start--977543,
+#RanGen_Snack-Start_Button--977543,
+#RanGen_Snack-End--977543 {
+    display: none;
+}
+
+.RanGen__Snackbar--end__button, 
+.RanGen__Snackbar--start__button {
+    background: none;
+    border: none;
+}
+
+.RanGen__Snackbar--main {
+    width: fit-content;
+    height: fit-content;
+    /* text-overflow: ; */
+    word-break: break-all;
+    /* overflow-wrap: break-word; */
+}
+.RanGen__Snackbar--main_options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.RanGen__Snackbar--main_option--secondary,
+.RanGen__Snackbar--main_option--primary {
+    border: none;
+    background: none;
+    font-size: 14rem;
+    font-weight: 600;
+}
+
+.RanGen__Snackbar--main_option--primary{
+    color:rgb(134, 178, 255, 1);
+}
+
+.RanGen__Snackbar--main_option--secondary{
+    color:rgba(233, 239, 242, 1);
+}
+
+.RanGen__Snackbar--timer__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: fit-content;
+    /* flex: none; */
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    /* margin: 4rem 8rem; */
+    margin: 4rem;
+}
+
+.RanGen__Snackbar--timer__outer {
+        display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: flex-start;
+    width: auto;
+    height: 4rem;
+    /* border: .5px solid #05051d; */
+    border-radius: var(--size-4);
+    /* background-color: #E5E5E5; */
+        order: 0;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.RanGen__Snackbar--timer__inner {
+    height: inherit;
+    border-radius: var(--size-4);
+    background-color: #86B2FF;
+    animation: snackbartimer forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes snackbartimer {
+    0% {
+        width: 100%;
+    }
+    /* 99%{
+        width: 1%;
+    } */
+    100% {
+        width: 1%;
+        display: none;
+    }
+}
+
+@keyframes snackbar-hidden {
+    0%, 20%{
+        width: auto;
+        min-height: var(--size-1);
+        /* border: var(--border-1) var(--color-error); */
+    border: var(--border-default);
+        /* border-radius: var(--size-4); */
+    /* border-radius: var(--size-2); */
+
+        overflow: hidden;
+    }
+    50%, 60%{
+        width: 80%;
+        height: var(--size-2);
+        /* border: var(--border-1) var(--color-error); */
+    border: var(--border-default);
+        /* border-radius: var(--size-4); */
+        overflow: hidden;
+                font-size: 80%;
+    }
+    60%, 70%{
+        width: 50%;
+        height: var(--size-3);        
+        /* border: var(--border-1) var(--color-error); */
+    border: var(--border-default);
+        border-radius: var(--size-4);
+        overflow: hidden;
+        color: transparent;
+    }
+    100% {
+        width: var(--size-1);
+        height: var(--size-4);
+        /* border: var(--border-1) var(--color-error); */
+    border: var(--border-default);
+        border-radius: var(--size-4); 
+        overflow: hidden;
+        display: none;
+    }
+}
+
+.RanGen__Snackbar--main_option--middle__display {
+    width: auto;
+    height: auto;
+}
