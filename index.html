@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RanGen</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=League+Spartan&display=swap"
+            rel="stylesheet"
+        />
+        <link href="./styles.css" rel="stylesheet" />
+        <script defer src="./RanGen.js "></script>
+        <meta property="og:url" content="https://mrtomblue.github.io/RanGen/" />
+        <meta property="og:site_name" content="RanGen" />
+        <meta property="og:title" content="Randomly Generate Tediousness." />
+        <meta
+            property="og:description"
+            content="Create strings (text) of random characters, with chosen parameters. Can serve as random password, url ending, component id, etc."
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RanGen</title>
-    <link href="https://fonts.googleapis.com/css?family=League+Spartan&display=swap" rel="stylesheet" />
-    <link href="./styles.css" rel="stylesheet" />
-    <script defer src="./RanGen.js "></script>
-    <meta property="og:url" content="https://mrtomblue.github.io/RanGen/">
-    <meta property="og:site_name" content="RanGen">
-    <meta property="og:title" content="Randomly Generate Tediousness.">
-    <meta property="og:description" content="Create strings (text) of random characters, with chosen parameters. Can serve as random password, url ending, component id, etc.">
-</head>
-
-<body>
-    <div class="RanGen">
-
-        <div class="main__window">
-            <div class="main__window--header">
-                <div class="main__window--header__text">
-                    <p>RanGen</p>
-                </div>
-                <!-- <div class="main__window--header__darkmode">
+    <body>
+        <div class="RanGen">
+            <div class="main__window">
+                <div class="main__window--header">
+                    <div class="main__window--header__text">
+                        <p>RanGen</p>
+                    </div>
+                    <!-- <div class="main__window--header__darkmode">
                     <p>Dark Mode</p>
                     <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="1" y="1" width="34" height="18" rx="9" fill="white"/>
@@ -31,11 +35,11 @@
 <rect x="1" y="1" width="34" height="18" rx="9" stroke="#121212" stroke-width="2"/>
 </svg>
                 </div> -->
-            </div>
-            <div class="main__window--body">
-                <div class="random__string--output gradient__border">
-                    <div class="random__string--output__text">
-                        <!-- <div id="RanGen_tooltip--850376" class="tooltip">
+                </div>
+                <div class="main__window--body">
+                    <div class="random__string--output gradient__border">
+                        <div class="random__string--output__text">
+                            <!-- <div id="RanGen_tooltip--850376" class="tooltip">
                             <svg class="tooltip__arrow" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.35521 1.21824C6.65665 0.927253 7.34335 0.927253 7.64479 1.21824L12.8775 6.26947C13.2046 6.5852 12.8384 7 12.2327 7H1.76731C1.16156 7 0.795447 6.5852 1.12252 6.26947L6.35521 1.21824Z" fill="black" stroke="black" stroke-linejoin="round"/>
                             </svg>
@@ -43,29 +47,64 @@
                                 OoOOoOooOo tooltip
                             </div>
                         </div> -->
-                        <label>
-                            <input id="RanGen_Output" placeholder="Random String" type="text"/>
-                        </label>
-                    </div>
-                    <!-- <img class=" icon__button reload " src=" ./icons/reload.svg " />
-                    <img class="icon__button clipboard-copy " src=" ./icons/clipboard-copy.svg " /> -->
-                    <div>
-                        <div id="RanGen_tooltip--118681" class="tooltip">
-                            <svg class="tooltip__arrow" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.35521 1.21824C6.65665 0.927253 7.34335 0.927253 7.64479 1.21824L12.8775 6.26947C13.2046 6.5852 12.8384 7 12.2327 7H1.76731C1.16156 7 0.795447 6.5852 1.12252 6.26947L6.35521 1.21824Z" fill="black" stroke="black" stroke-linejoin="round"/>
-                            </svg>
-                            <div class="tooltip__text">
-                                OoOOoOooOo tooltip
-                            </div>
+                            <label>
+                                <input
+                                    id="RanGen_Output"
+                                    placeholder="Random String"
+                                    type="text"
+                                />
+                            </label>
                         </div>
-                        <button class="icon__button" id="RanGen_Output-Reload">
-                            <svg class="reload " width="24 " height="24 " viewBox="0 0 24 24 " fill="none " xmlns="http://www.w3.org/2000/svg ">
-                            <rect width="24 " height="24 " fill="white "/>
-                            <path d="M17 17L16 21M17 17L13 16M17 17C15.5 18.5 14 19 12 19C10 19 8.50005 18.5 7.00003 17C5.5 15.5 5 14 5 12C5 11.0765 5.10662 10.2595 5.36909 9.5M7.00002 7L8 3M7.00002 7L11 8M7.00002 7C8.50002 5.5 10 5.00001 12 5C14 4.99999 15.5 5.5 17 7C18.5 8.5
-                        19 10 19 12C19 12.9235 18.8934 13.7405 18.6309 14.5 " 
-                        stroke="#86B2FF" stroke-width="1.5 " stroke-linecap="round " stroke-linejoin="round "/>
-                    </svg>
-                    <!-- <svg class="reload" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- <img class=" icon__button reload " src=" ./icons/reload.svg " />
+                    <img class="icon__button clipboard-copy " src=" ./icons/clipboard-copy.svg " /> -->
+                        <div>
+                            <div id="RanGen_tooltip--118681" class="tooltip">
+                                <svg
+                                    class="tooltip__arrow"
+                                    width="14"
+                                    height="8"
+                                    viewBox="0 0 14 8"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M6.35521 1.21824C6.65665 0.927253 7.34335 0.927253 7.64479 1.21824L12.8775 6.26947C13.2046 6.5852 12.8384 7 12.2327 7H1.76731C1.16156 7 0.795447 6.5852 1.12252 6.26947L6.35521 1.21824Z"
+                                        fill="black"
+                                        stroke="black"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <div class="tooltip__text">
+                                    OoOOoOooOo tooltip
+                                </div>
+                            </div>
+                            <button
+                                class="icon__button"
+                                id="RanGen_Output-Reload"
+                            >
+                                <svg
+                                    class="reload"
+                                    width="24 "
+                                    height="24 "
+                                    viewBox="0 0 24 24 "
+                                    fill="none "
+                                    xmlns="http://www.w3.org/2000/svg "
+                                >
+                                    <rect
+                                        width="24 "
+                                        height="24 "
+                                        fill="white "
+                                    />
+                                    <path
+                                        d="M17 17L16 21M17 17L13 16M17 17C15.5 18.5 14 19 12 19C10 19 8.50005 18.5 7.00003 17C5.5 15.5 5 14 5 12C5 11.0765 5.10662 10.2595 5.36909 9.5M7.00002 7L8 3M7.00002 7L11 8M7.00002 7C8.50002 5.5 10 5.00001 12 5C14 4.99999 15.5 5.5 17 7C18.5 8.5
+                        19 10 19 12C19 12.9235 18.8934 13.7405 18.6309 14.5 "
+                                        stroke="#86B2FF"
+                                        stroke-width="1.5 "
+                                        stroke-linecap="round "
+                                        stroke-linejoin="round "
+                                    />
+                                </svg>
+                                <!-- <svg class="reload" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="24" height="24" fill="white"/>
                         <path d="M17 17L16 21M17 17L13 16M17 17C15.5 18.5 14 19 12 19C10 19 8.50005 18.5 7.00003 17C5.5 15.5 5 14 5 12C5 11.0765 5.10662 10.2595 5.36909 9.5M7.00002 7L8 3M7.00002 7L11 8M7.00002 7C8.50002 5.5 10 5.00001 12 5C14 4.99999 15.5 5.5 17 7C18.5 8.5 19 10 19 12C19 12.9235 18.8934 13.7405 18.6309 14.5" stroke="url(#paint0_linear_1004_587)" stroke-opacity="0.9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <defs>
@@ -75,24 +114,57 @@
                             </linearGradient>
                         </defs>
                     </svg> -->
-                </button>
-            </div>
-                                <div>
-                        <div id="RanGen_tooltip--351243" class="tooltip">
-                            <svg class="tooltip__arrow" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.35521 1.21824C6.65665 0.927253 7.34335 0.927253 7.64479 1.21824L12.8775 6.26947C13.2046 6.5852 12.8384 7 12.2327 7H1.76731C1.16156 7 0.795447 6.5852 1.12252 6.26947L6.35521 1.21824Z" fill="black" stroke="black" stroke-linejoin="round"/>
-                            </svg>
-                            <div class="tooltip__text">
-                                OoOOoOooOo tooltip
-                            </div>
+                            </button>
                         </div>
-                <button class="icon__button" id="RanGen_Output-Copy_Clipboard" onclick="CopyGen64()">
-                        <svg class="clipboard-copy " width="24 " height="24 " viewBox="0 0 24 24 " fill="none " xmlns="http://www.w3.org/2000/svg ">
-                            <rect width="24 " height="24 " fill="white "/>
-                            <path d="M9 8H6.25C5.625 8 5 8.66667 5 9.33333V18.6667C5 19.3333 5.625 20 6.25 20H13.75C14.375 20 15 19.3333 15 18.6667V16M17.75 4C18.375 4 19 4.66667 19 5.33333V14.6667C19 15.3333 18.375 16 17.75 16H10.25C9.625 16 9 15.3333 9 14.6667V5.33333C9 4.66667
-                            9.625 4 10.25 4H17.75Z" stroke="#86B2FF" stroke-width="1.5 " stroke-linecap="round " stroke-linejoin="round " />
-                        </svg>
-                        <!-- <svg class="clipboard-copy" width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div>
+                            <div id="RanGen_tooltip--351243" class="tooltip">
+                                <svg
+                                    class="tooltip__arrow"
+                                    width="14"
+                                    height="8"
+                                    viewBox="0 0 14 8"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M6.35521 1.21824C6.65665 0.927253 7.34335 0.927253 7.64479 1.21824L12.8775 6.26947C13.2046 6.5852 12.8384 7 12.2327 7H1.76731C1.16156 7 0.795447 6.5852 1.12252 6.26947L6.35521 1.21824Z"
+                                        fill="black"
+                                        stroke="black"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <div class="tooltip__text">
+                                    OoOOoOooOo tooltip
+                                </div>
+                            </div>
+                            <button
+                                class="icon__button"
+                                id="RanGen_Output-Copy_Clipboard"
+                                onclick="CopyGen64()"
+                            >
+                                <svg
+                                    class="clipboard-copy"
+                                    width="24 "
+                                    height="24 "
+                                    viewBox="0 0 24 24 "
+                                    fill="none "
+                                    xmlns="http://www.w3.org/2000/svg "
+                                >
+                                    <rect
+                                        width="24 "
+                                        height="24 "
+                                        fill="white "
+                                    />
+                                    <path
+                                        d="M9 8H6.25C5.625 8 5 8.66667 5 9.33333V18.6667C5 19.3333 5.625 20 6.25 20H13.75C14.375 20 15 19.3333 15 18.6667V16M17.75 4C18.375 4 19 4.66667 19 5.33333V14.6667C19 15.3333 18.375 16 17.75 16H10.25C9.625 16 9 15.3333 9 14.6667V5.33333C9 4.66667
+                            9.625 4 10.25 4H17.75Z"
+                                        stroke="#86B2FF"
+                                        stroke-width="1.5 "
+                                        stroke-linecap="round "
+                                        stroke-linejoin="round "
+                                    />
+                                </svg>
+                                <!-- <svg class="clipboard-copy" width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="2" y="3" width="24" height="24" fill="white"/>
 <g filter="url(#filter0_dd_1005_589)">
 <path d="M11 11H8.25C7.625 11 7 11.6667 7 12.3333V21.6667C7 22.3333 7.625 23 8.25 23H15.75C16.375 23 17 22.3333 17 21.6667V19M19.75 7C20.375 7 21 7.66667 21 8.33333V17.6667C21 18.3333 20.375 19 19.75 19H12.25C11.625 19 11 18.3333 11 17.6667V8.33333C11 7.66667 11.625 7 12.25 7H19.75Z" stroke="url(#paint0_linear_1005_589)" stroke-opacity="0.9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -118,14 +190,13 @@
 </linearGradient>
 </defs>
 </svg> -->
-
-                    </button>
-            </div>
-
-
-                </div>
-                <div class="random__string--input__container gradient__border">
-                    <!-- <div class="random__string--input__character--options__container ">
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="random__string--input__container gradient__border"
+                    >
+                        <!-- <div class="random__string--input__character--options__container ">
                         <div class="random__string--input__character--option__uppercase ">
                             <svg width="16 " height="16 " viewBox="0 0 16 16 " fill="none " xmlns="http://www.w3.org/2000/svg ">
 <path d="M7 10.0001L6.29287 10.7072C6.48041 10.8948 6.73477 11.0001 6.99999 11.0001C7.26522 11.0001 7.51958 10.8948 7.70712 10.7072L7 10.0001ZM5.70713 7.29291C5.31662 6.90238 4.68345 6.90236 4.29291 7.29287C3.90238 7.68338 3.90236 8.31655 4.29287 8.70709L5.70713
@@ -172,169 +243,428 @@
                         </div>
                     </div> -->
 
-                    <div class="random__string--input__character--collapseable__section">
-                        <div class="random__string--input__character--collapseable">
-                            <div class="random__string--input__character--collapseable__main">
-                                <div class="random__string--input__character--length">
-                            <div id="RanGen_tooltip--983492" class="tooltip">
-                            <svg class="tooltip__arrow" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.35521 1.21824C6.65665 0.927253 7.34335 0.927253 7.64479 1.21824L12.8775 6.26947C13.2046 6.5852 12.8384 7 12.2327 7H1.76731C1.16156 7 0.795447 6.5852 1.12252 6.26947L6.35521 1.21824Z" fill="black" stroke="black" stroke-linejoin="round"/>
-                            </svg>
-                            <div class="tooltip__text">
-                                OoOOoOooOo tooltip
-                            </div>
-                        </div>
-                                    <div id="Option_Length-RangeSlider_Text" class="random__string--input__character--length__text">
-                                        <p>Length:</p><input id="Option_Length-RangeSlider_Text-input" type="number"  min="0" max="200"/>
+                        <div
+                            class="random__string--input__character--collapseable__section"
+                        >
+                            <div
+                                class="random__string--input__character--collapseable"
+                            >
+                                <div
+                                    class="random__string--input__character--collapseable__main"
+                                >
+                                    <div
+                                        class="random__string--input__character--length"
+                                    >
+                                        <div
+                                            id="RanGen_tooltip--983492"
+                                            class="tooltip"
+                                        >
+                                            <svg
+                                                class="tooltip__arrow"
+                                                width="14"
+                                                height="8"
+                                                viewBox="0 0 14 8"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M6.35521 1.21824C6.65665 0.927253 7.34335 0.927253 7.64479 1.21824L12.8775 6.26947C13.2046 6.5852 12.8384 7 12.2327 7H1.76731C1.16156 7 0.795447 6.5852 1.12252 6.26947L6.35521 1.21824Z"
+                                                    fill="black"
+                                                    stroke="black"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                            <div class="tooltip__text">
+                                                OoOOoOooOo tooltip
+                                            </div>
+                                        </div>
+                                        <div
+                                            id="Option_Length-RangeSlider_Text"
+                                            class="random__string--input__character--length__text"
+                                        >
+                                            <p>Length:</p>
+                                            <input
+                                                id="Option_Length-RangeSlider_Text-input"
+                                                type="number"
+                                                min="0"
+                                                max="200"
+                                            />
+                                        </div>
+                                        <input
+                                            id="Option_Length-RangeSlider"
+                                            type="range"
+                                            min="0"
+                                            max="200"
+                                            value="12"
+                                        />
                                     </div>
-                                    <input id="Option_Length-RangeSlider" type="range" min="0" max="200" value="12"/>
-                                </div>
-
-                            <div id="Option_Length-Error" class="random__string--input__error">
-<svg class="random__string--input__error--icon"  id="Option_Length-Error_Icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- <div  id="Option_Length-Error" class="random__string--input__character--length__error">
+<svg id="Option_Length-Error_Icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="24" height="24"/>
 <path d="M10.2679 5C11.0377 3.66667 12.9623 3.66667 13.7321 5L18.9282 14C19.698 15.3333 18.7358 17 17.1962 17H6.80385C5.26425 17 4.302 15.3333 5.0718 14L10.2679 5Z" stroke="#ff5656" stroke-width="1.5" stroke-linejoin="round"/>
 <rect x="11" y="13" width="2" height="2" rx="1" fill="#ff5656"/>
 <path d="M12 7V11" stroke="#ff5656" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
-                            <div  class="random__string--input__error--text"  id="Option_Length-Error_Text">Error</div>
+                            <div id="Option_Length-Error_Text">Error</div>
                             </div>
-                            </div>
-                            <svg class="random__string--input__character--collapseable__divider horizontal__divider" width="320" height="4" viewBox="0 0 320 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="horizontal__divider--vector"d="M329 1H1" stroke="#121212" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-
-                        </div>
-                        <div class="random__string--input__character--collapseable__extension">
-                            <div class="random__string--input__character--options__container "> 
-                            <div class="random__string--input__character--options">
-                                <div class="random__string--input__character--option__uppercase">
-                                <div class="Checkbox--Alt">
-                                    <button class="Checkbox--Alt__button"
-                                    id="Option_Uppercase-Checkbox--Alt__button">
-                                    <div class="Checkbox--Alt__button--inside">
-                                        <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Option_Uppercase-Checkbox--Alt__check" d="M3 5.00012L2.29287 5.70721C2.48041 5.89475 2.73477 6.00012 2.99999 6.00012C3.26522 6.00012 3.51958 5.89476 3.70712 5.70722L3 5.00012ZM1.70713 2.29291C1.31662 1.90238 0.683451 1.90236 0.292915 2.29287C-0.0976214 2.68338 -0.0976407 3.31655 0.292872 3.70709L1.70713 2.29291ZM7.70712 1.7071C8.09764 1.31657 8.09763 0.683401 7.7071 0.292882C7.31657 -0.0976359 6.6834 -0.0976262 6.29288 0.292904L7.70712 1.7071ZM3.70713 4.29304L1.70713 2.29291L0.292872 3.70709L2.29287 5.70721L3.70713 4.29304ZM3.70712 5.70722L7.70712 1.7071L6.29288 0.292904L2.29288 4.29303L3.70712 5.70722Z" fill="#86B2FF"/>
-</svg>
-
-<!-- <svg id="Option_Uppercase-Checkbox--Alt"  width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Option_Uppercase-Checkbox--Alt__check" d="M7 10.0001L6.29287 10.7072C6.48041 10.8948 6.73477 11.0001 6.99999 11.0001C7.26522 11.0001 7.51958 10.8948 7.70712 10.7072L7 10.0001ZM5.70713 7.29291C5.31662 6.90238 4.68345 6.90236 4.29291 7.29287C3.90238 7.68338 3.90236 8.31655 4.29287 8.70709L5.70713 7.29291ZM11.7071 6.7071C12.0976 6.31657 12.0976 5.6834 11.7071 5.29288C11.3166 4.90236 10.6834 4.90237 10.2929 5.2929L11.7071 6.7071ZM7.70713 9.29304L5.70713 7.29291L4.29287 8.70709L6.29287 10.7072L7.70713 9.29304ZM7.70712 10.7072L11.7071 6.7071L10.2929 5.2929L6.29288 9.29303L7.70712 10.7072Z" fill="#121212"/>
-<rect x="1" y="1" width="14" height="14" rx="3" stroke="#121212" stroke-width="2"/></svg> -->
+                            </div> -->
+                                    <div
+                                        id="Option_Length-Error"
+                                        class="random__string--input__error"
+                                    >
+                                        <svg
+                                            class="random__string--input__error--icon"
+                                            id="Option_Length-Error_Icon"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <rect width="24" height="24" />
+                                            <path
+                                                d="M10.2679 5C11.0377 3.66667 12.9623 3.66667 13.7321 5L18.9282 14C19.698 15.3333 18.7358 17 17.1962 17H6.80385C5.26425 17 4.302 15.3333 5.0718 14L10.2679 5Z"
+                                                stroke="#ff5656"
+                                                stroke-width="1.5"
+                                                stroke-linejoin="round"
+                                            />
+                                            <rect
+                                                x="11"
+                                                y="13"
+                                                width="2"
+                                                height="2"
+                                                rx="1"
+                                                fill="#ff5656"
+                                            />
+                                            <path
+                                                d="M12 7V11"
+                                                stroke="#ff5656"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        <div
+                                            class="random__string--input__error--text"
+                                            id="Option_Length-Error_Text"
+                                        >
+                                            Error
+                                        </div>
                                     </div>
-                                    </button>
-                                    <input id="Option_Uppercase-Checkbox" class="random__string--input__character--option__uppercase--checkbox" type="checkbox" checked/>
                                 </div>
-                                    <p>[A-Z]</p>
-                                </div>
-                                <div class=" random__string--input__character--option__lowercase ">
-                                                     <div class="Checkbox--Alt">
-                                    <button class="Checkbox--Alt__button"
-                                    id="Option_Lowercase-Checkbox--Alt__button">
-                                    <div class="Checkbox--Alt__button--inside">
-                                        <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Option_Lowercase-Checkbox--Alt__check" d="M3 5.00012L2.29287 5.70721C2.48041 5.89475 2.73477 6.00012 2.99999 6.00012C3.26522 6.00012 3.51958 5.89476 3.70712 5.70722L3 5.00012ZM1.70713 2.29291C1.31662 1.90238 0.683451 1.90236 0.292915 2.29287C-0.0976214 2.68338 -0.0976407 3.31655 0.292872 3.70709L1.70713 2.29291ZM7.70712 1.7071C8.09764 1.31657 8.09763 0.683401 7.7071 0.292882C7.31657 -0.0976359 6.6834 -0.0976262 6.29288 0.292904L7.70712 1.7071ZM3.70713 4.29304L1.70713 2.29291L0.292872 3.70709L2.29287 5.70721L3.70713 4.29304ZM3.70712 5.70722L7.70712 1.7071L6.29288 0.292904L2.29288 4.29303L3.70712 5.70722Z" fill="#86B2FF"/>
-</svg>
- </div>
-                                    </button>
-                                    <input id="Option_Lowercase-Checkbox" class="random__string--input__character--option__lowercase--checkbox " type="checkbox" checked/>
-                                </div>
-                                <p>[a-z]</p>
+                                <svg
+                                    class="random__string--input__character--collapseable__divider horizontal__divider"
+                                    width="320"
+                                    height="4"
+                                    viewBox="0 0 320 4"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        class="horizontal__divider--vector"
+                                        d="M329 1H1"
+                                        stroke="#121212"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
                             </div>
+                            <div
+                                class="random__string--input__character--collapseable__extension"
+                            >
+                                <div
+                                    class="random__string--input__character--options__container"
+                                >
+                                    <div
+                                        class="random__string--input__character--options"
+                                    >
+                                        <div
+                                            class="random__string--input__character--option__uppercase"
+                                        >
+                                            <div class="Checkbox--Alt">
+                                                <button
+                                                    class="Checkbox--Alt__button"
+                                                    id="Option_Uppercase-Checkbox--Alt__button"
+                                                >
+                                                    <div
+                                                        class="Checkbox--Alt__button--inside"
+                                                    >
+                                                        <svg
+                                                            width="8"
+                                                            height="6"
+                                                            viewBox="0 0 8 6"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path
+                                                                id="Option_Uppercase-Checkbox--Alt__check"
+                                                                d="M3 5.00012L2.29287 5.70721C2.48041 5.89475 2.73477 6.00012 2.99999 6.00012C3.26522 6.00012 3.51958 5.89476 3.70712 5.70722L3 5.00012ZM1.70713 2.29291C1.31662 1.90238 0.683451 1.90236 0.292915 2.29287C-0.0976214 2.68338 -0.0976407 3.31655 0.292872 3.70709L1.70713 2.29291ZM7.70712 1.7071C8.09764 1.31657 8.09763 0.683401 7.7071 0.292882C7.31657 -0.0976359 6.6834 -0.0976262 6.29288 0.292904L7.70712 1.7071ZM3.70713 4.29304L1.70713 2.29291L0.292872 3.70709L2.29287 5.70721L3.70713 4.29304ZM3.70712 5.70722L7.70712 1.7071L6.29288 0.292904L2.29288 4.29303L3.70712 5.70722Z"
+                                                                fill="#86B2FF"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                </button>
+                                                <input
+                                                    id="Option_Uppercase-Checkbox"
+                                                    class="random__string--input__character--option__uppercase--checkbox"
+                                                    type="checkbox"
+                                                    checked
+                                                />
+                                            </div>
+                                            <p>[A-Z]</p>
+                                        </div>
+                                        <div
+                                            class="random__string--input__character--option__lowercase"
+                                        >
+                                            <div class="Checkbox--Alt">
+                                                <button
+                                                    class="Checkbox--Alt__button"
+                                                    id="Option_Lowercase-Checkbox--Alt__button"
+                                                >
+                                                    <div
+                                                        class="Checkbox--Alt__button--inside"
+                                                    >
+                                                        <svg
+                                                            width="8"
+                                                            height="6"
+                                                            viewBox="0 0 8 6"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path
+                                                                id="Option_Lowercase-Checkbox--Alt__check"
+                                                                d="M3 5.00012L2.29287 5.70721C2.48041 5.89475 2.73477 6.00012 2.99999 6.00012C3.26522 6.00012 3.51958 5.89476 3.70712 5.70722L3 5.00012ZM1.70713 2.29291C1.31662 1.90238 0.683451 1.90236 0.292915 2.29287C-0.0976214 2.68338 -0.0976407 3.31655 0.292872 3.70709L1.70713 2.29291ZM7.70712 1.7071C8.09764 1.31657 8.09763 0.683401 7.7071 0.292882C7.31657 -0.0976359 6.6834 -0.0976262 6.29288 0.292904L7.70712 1.7071ZM3.70713 4.29304L1.70713 2.29291L0.292872 3.70709L2.29287 5.70721L3.70713 4.29304ZM3.70712 5.70722L7.70712 1.7071L6.29288 0.292904L2.29288 4.29303L3.70712 5.70722Z"
+                                                                fill="#86B2FF"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                </button>
+                                                <input
+                                                    id="Option_Lowercase-Checkbox"
+                                                    class="random__string--input__character--option__lowercase--checkbox"
+                                                    type="checkbox"
+                                                    checked
+                                                />
+                                            </div>
+                                            <p>[a-z]</p>
+                                        </div>
 
-                                <div class="random__string--input__character--option__numbers ">
-                                                                                         <div class="Checkbox--Alt">
-                                    <button class="Checkbox--Alt__button"
-                                    id="Option_Numbers-Checkbox--Alt__button">
-                                    <div class="Checkbox--Alt__button--inside">
-                                        <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Option_Numbers-Checkbox--Alt__check" d="M3 5.00012L2.29287 5.70721C2.48041 5.89475 2.73477 6.00012 2.99999 6.00012C3.26522 6.00012 3.51958 5.89476 3.70712 5.70722L3 5.00012ZM1.70713 2.29291C1.31662 1.90238 0.683451 1.90236 0.292915 2.29287C-0.0976214 2.68338 -0.0976407 3.31655 0.292872 3.70709L1.70713 2.29291ZM7.70712 1.7071C8.09764 1.31657 8.09763 0.683401 7.7071 0.292882C7.31657 -0.0976359 6.6834 -0.0976262 6.29288 0.292904L7.70712 1.7071ZM3.70713 4.29304L1.70713 2.29291L0.292872 3.70709L2.29287 5.70721L3.70713 4.29304ZM3.70712 5.70722L7.70712 1.7071L6.29288 0.292904L2.29288 4.29303L3.70712 5.70722Z" fill="#86B2FF"/>
-</svg>
- </div>
-                                    </button>
-                                    <input id="Option_Numbers-Checkbox" class="random__string--input__character--option__numbers--checkbox" type="checkbox" checked/>
+                                        <div
+                                            class="random__string--input__character--option__numbers"
+                                        >
+                                            <div class="Checkbox--Alt">
+                                                <button
+                                                    class="Checkbox--Alt__button"
+                                                    id="Option_Numbers-Checkbox--Alt__button"
+                                                >
+                                                    <div
+                                                        class="Checkbox--Alt__button--inside"
+                                                    >
+                                                        <svg
+                                                            width="8"
+                                                            height="6"
+                                                            viewBox="0 0 8 6"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path
+                                                                id="Option_Numbers-Checkbox--Alt__check"
+                                                                d="M3 5.00012L2.29287 5.70721C2.48041 5.89475 2.73477 6.00012 2.99999 6.00012C3.26522 6.00012 3.51958 5.89476 3.70712 5.70722L3 5.00012ZM1.70713 2.29291C1.31662 1.90238 0.683451 1.90236 0.292915 2.29287C-0.0976214 2.68338 -0.0976407 3.31655 0.292872 3.70709L1.70713 2.29291ZM7.70712 1.7071C8.09764 1.31657 8.09763 0.683401 7.7071 0.292882C7.31657 -0.0976359 6.6834 -0.0976262 6.29288 0.292904L7.70712 1.7071ZM3.70713 4.29304L1.70713 2.29291L0.292872 3.70709L2.29287 5.70721L3.70713 4.29304ZM3.70712 5.70722L7.70712 1.7071L6.29288 0.292904L2.29288 4.29303L3.70712 5.70722Z"
+                                                                fill="#86B2FF"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                </button>
+                                                <input
+                                                    id="Option_Numbers-Checkbox"
+                                                    class="random__string--input__character--option__numbers--checkbox"
+                                                    type="checkbox"
+                                                    checked
+                                                />
+                                            </div>
+                                            <p>[0-9]</p>
+                                        </div>
+                                        <div
+                                            class="random__string--input__character--option__symbols"
+                                        >
+                                            <div class="Checkbox--Alt">
+                                                <button
+                                                    class="Checkbox--Alt__button"
+                                                    id="Option_Symbols-Checkbox--Alt__button"
+                                                >
+                                                    <div
+                                                        class="Checkbox--Alt__button--inside"
+                                                    >
+                                                        <svg
+                                                            width="8"
+                                                            height="6"
+                                                            viewBox="0 0 8 6"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path
+                                                                id="Option_Symbols-Checkbox--Alt__check"
+                                                                d="M3 5.00012L2.29287 5.70721C2.48041 5.89475 2.73477 6.00012 2.99999 6.00012C3.26522 6.00012 3.51958 5.89476 3.70712 5.70722L3 5.00012ZM1.70713 2.29291C1.31662 1.90238 0.683451 1.90236 0.292915 2.29287C-0.0976214 2.68338 -0.0976407 3.31655 0.292872 3.70709L1.70713 2.29291ZM7.70712 1.7071C8.09764 1.31657 8.09763 0.683401 7.7071 0.292882C7.31657 -0.0976359 6.6834 -0.0976262 6.29288 0.292904L7.70712 1.7071ZM3.70713 4.29304L1.70713 2.29291L0.292872 3.70709L2.29287 5.70721L3.70713 4.29304ZM3.70712 5.70722L7.70712 1.7071L6.29288 0.292904L2.29288 4.29303L3.70712 5.70722Z"
+                                                                fill="#86B2FF"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                </button>
+                                                <input
+                                                    id="Option_Symbols-Checkbox"
+                                                    class="random__string--input__character--option__symbols--checkbox"
+                                                    type="checkbox"
+                                                    checked
+                                                />
+                                            </div>
+                                            <p>[@#*%$!-_ ]</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        id="Option_Character-Error"
+                                        class="random__string--input__error"
+                                    >
+                                        <svg
+                                            class="random__string--input__error--icon"
+                                            id="Option_Character-Error_Icon"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <rect width="24" height="24" />
+                                            <path
+                                                d="M10.2679 5C11.0377 3.66667 12.9623 3.66667 13.7321 5L18.9282 14C19.698 15.3333 18.7358 17 17.1962 17H6.80385C5.26425 17 4.302 15.3333 5.0718 14L10.2679 5Z"
+                                                stroke="#ff5656"
+                                                stroke-width="1.5"
+                                                stroke-linejoin="round"
+                                            />
+                                            <rect
+                                                x="11"
+                                                y="13"
+                                                width="2"
+                                                height="2"
+                                                rx="1"
+                                                fill="#ff5656"
+                                            />
+                                            <path
+                                                d="M12 7V11"
+                                                stroke="#ff5656"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        <div
+                                            class="random__string--input__error--text"
+                                            id="Option_Character-Error_Text"
+                                        >
+                                            Error
+                                        </div>
+                                    </div>
                                 </div>
-                                    <p>[0-9]</p>
-                                </div>
-                                <div class="random__string--input__character--option__symbols ">
-                                         <div class="Checkbox--Alt">
-                                    <button class="Checkbox--Alt__button"
-                                    id="Option_Symbols-Checkbox--Alt__button">
-                                    <div class="Checkbox--Alt__button--inside">
-                                        <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Option_Symbols-Checkbox--Alt__check" d="M3 5.00012L2.29287 5.70721C2.48041 5.89475 2.73477 6.00012 2.99999 6.00012C3.26522 6.00012 3.51958 5.89476 3.70712 5.70722L3 5.00012ZM1.70713 2.29291C1.31662 1.90238 0.683451 1.90236 0.292915 2.29287C-0.0976214 2.68338 -0.0976407 3.31655 0.292872 3.70709L1.70713 2.29291ZM7.70712 1.7071C8.09764 1.31657 8.09763 0.683401 7.7071 0.292882C7.31657 -0.0976359 6.6834 -0.0976262 6.29288 0.292904L7.70712 1.7071ZM3.70713 4.29304L1.70713 2.29291L0.292872 3.70709L2.29287 5.70721L3.70713 4.29304ZM3.70712 5.70722L7.70712 1.7071L6.29288 0.292904L2.29288 4.29303L3.70712 5.70722Z" fill="#86B2FF"/>
-</svg>
- </div>
-                                    </button>
-                                    <input id="Option_Symbols-Checkbox" class="random__string--input__character--option__symbols--checkbox " type="checkbox" checked/>
-                                </div>
-                                    <p>[@#*%$!-_ ]</p>
-                                </div>
-                            </div>
-<div id="Option_Character-Error" class="random__string--input__error">
-<svg class="random__string--input__error--icon"  id="Option_Character-Error_Icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="24" height="24"/>
-<path d="M10.2679 5C11.0377 3.66667 12.9623 3.66667 13.7321 5L18.9282 14C19.698 15.3333 18.7358 17 17.1962 17H6.80385C5.26425 17 4.302 15.3333 5.0718 14L10.2679 5Z" stroke="#ff5656" stroke-width="1.5" stroke-linejoin="round"/>
-<rect x="11" y="13" width="2" height="2" rx="1" fill="#ff5656"/>
-<path d="M12 7V11" stroke="#ff5656" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-                            <div  class="random__string--input__error--text"  id="Option_Character-Error_Text">Error</div>
-                            </div>
-                            </div>
-                            </div>
-                            <div class="random__string--input__character--start-end__container ">
-                                <!-- <div class="gradient__border--alt__wrapper"> -->
+                                <div
+                                    class="random__string--input__character--start-end__container"
+                                >
+                                    <!-- <div class="gradient__border--alt__wrapper"> -->
 
-                                    <div class="random__string--input__characters--start">
-                                    <input id="Option_Character-Start" placeholder="Start Characters" type="text"/>
-                                    <!-- <p>Start Characters</p> -->
-                                </div>
-                                <!-- </div>
+                                    <div
+                                        class="random__string--input__characters--start"
+                                    >
+                                        <input
+                                            id="Option_Character-Start"
+                                            placeholder="Start Characters"
+                                            type="text"
+                                        />
+                                        <!-- <p>Start Characters</p> -->
+                                    </div>
+                                    <!-- </div>
                                 <div class="gradient__border--alt__wrapper"> -->
-                                
-                                <div class="random__string--input__characters--end">
-                                    <input id="Option_Character-End" placeholder="End Characters" type="text"/>
-                                    <!-- <p> End Characters</p> -->
+
+                                    <div
+                                        class="random__string--input__characters--end"
+                                    >
+                                        <input
+                                            id="Option_Character-End"
+                                            placeholder="End Characters"
+                                            type="text"
+                                        />
+                                        <!-- <p> End Characters</p> -->
+                                    </div>
+                                    <!-- </div> -->
                                 </div>
-                                <!-- </div> -->
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div class=" main__window--footer "></div>
+                <div class="main__window--footer"></div>
             </div>
-            
-<div class="RanGen__Snackbar--section">
 
-
-    <div id="RanGen_Snack-Container--977543" class="RanGen__Snackbar--container">
-        <div id="RanGen_Snack--977543"class="RanGen__Snackbar">
-
-            <button id="RanGen_Snack-Start_Button--977543" class="RanGen__Snackbar--start__button"></button>
-            <div id="RanGen_Snack-Start--977543" class="RanGen__Snackbar--start"></div>
-                <div id="RanGen_Snack-Main--977543" class="RanGen__Snackbar--main">This site is under maintenance. <br/> Thanks for your patience</div>
-                <div id="RanGen_Snack-End--977543" class="RanGen__Snackbar--end">
-                </div>
-                <button id="RanGen_Snack-End_Button--977543" class="RanGen__Snackbar--end__button">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 13L13 1M1 1L7 7L13 13" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                </button>
-            </div>
-                <div id="RanGen_Snack-Timer_Container--977543" class="RanGen__Snackbar--timer__container">
-                    <div id="RanGen_Snack-Timer_Outer--977543" class="RanGen__Snackbar--timer__outer">
-                        <div id="RanGen_Snack-Timer_Inner--977543" class="RanGen__Snackbar--timer__inner"></div>
+            <div class="RanGen__Snackbar--section">
+                <div
+                    id="RanGen_Snack-Container--977543"
+                    class="RanGen__Snackbar--container"
+                >
+                    <div id="RanGen_Snack--977543" class="RanGen__Snackbar">
+                        <button
+                            id="RanGen_Snack-Start_Button--977543"
+                            class="RanGen__Snackbar--start__button"
+                        ></button>
+                        <div
+                            id="RanGen_Snack-Start--977543"
+                            class="RanGen__Snackbar--start"
+                        ></div>
+                        <div
+                            id="RanGen_Snack-Main--977543"
+                            class="RanGen__Snackbar--main"
+                        >
+                            This site is under maintenance. <br />
+                            Thanks for your patience
+                        </div>
+                        <div
+                            id="RanGen_Snack-End--977543"
+                            class="RanGen__Snackbar--end"
+                        ></div>
+                        <button
+                            id="RanGen_Snack-End_Button--977543"
+                            class="RanGen__Snackbar--end__button"
+                        >
+                            <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M1 13L13 1M1 1L7 7L13 13"
+                                    stroke="#ffffff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
                     </div>
-                    <div id="RanGen_Snack-Timer_Label--977543" class="RanGen__Snackbar--timer__label"></div>
+                    <div
+                        id="RanGen_Snack-Timer_Container--977543"
+                        class="RanGen__Snackbar--timer__container"
+                    >
+                        <div
+                            id="RanGen_Snack-Timer_Outer--977543"
+                            class="RanGen__Snackbar--timer__outer"
+                        >
+                            <div
+                                id="RanGen_Snack-Timer_Inner--977543"
+                                class="RanGen__Snackbar--timer__inner"
+                            ></div>
+                        </div>
+                        <div
+                            id="RanGen_Snack-Timer_Label--977543"
+                            class="RanGen__Snackbar--timer__label"
+                        ></div>
+                    </div>
                 </div>
-
             </div>
-        
         </div>
-
-        </div>
-
-</body>
-
+    </body>
 </html>

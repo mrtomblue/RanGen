@@ -22,3 +22,6 @@ A Random String Generator using JavaScript.
 ### To Consider
     - make error function throw error using "new ERROR()" ?
     - change primary layout to grid instead of flex layout
+
+---
+
