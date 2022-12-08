@@ -17,7 +17,15 @@ let startCharacters = "";
 let endCharacters = "";
 let lengthLimit = 200
 
-const gen64 = (length, hasUppercase, hasLowercase, hasNumbers, hasSymbols, hasStartCharacters, hasEndCharacters) => {
+const gen64 = (
+    length,
+    hasUppercase,
+    hasLowercase,
+    hasNumbers,
+    hasSymbols,
+    hasStartCharacters,
+    hasEndCharacters
+) => {
     const availableCharacters = [
         ...(hasUppercase ? uppercaseLetters : []),
         ...(hasLowercase ? lowercaseLetters : []),
@@ -45,9 +53,17 @@ const gen64 = (length, hasUppercase, hasLowercase, hasNumbers, hasSymbols, hasSt
     let numStfr = `${startCharacters}${preProcessedNumbStfr}${endCharacters}`;
 
     return numStfr;
-}
+};
 
-document.getElementById("RanGen_Output").value = gen64(12, true, true, true, true, false, false);
+document.getElementById("RanGen_Output").value = gen64(
+    12,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false
+);
 
 document.getElementById("Option_Length-RangeSlider_Text-input").value =
     document.getElementById("Option_Length-RangeSlider").value;
@@ -68,11 +84,15 @@ let GenLowercase = document.getElementById("Option_Lowercase-Checkbox").checked;
 let GenNumbers = document.getElementById("Option_Numbers-Checkbox").checked;
 let GenSymbols = document.getElementById("Option_Symbols-Checkbox").checked;
 let GenLength = document.getElementById("Option_Length-RangeSlider").value;
-let GenStartCharacters = document.getElementById("Option_Character-Start").value;
+let GenStartCharacters = document.getElementById(
+    "Option_Character-Start"
+).value;
 let GenEndCharacters = document.getElementById("Option_Character-End").value;
 let inputRange = document.getElementById("Option_Length-RangeSlider");
 let range = inputRange.value;
-let inputRangeText = document.getElementById("Option_Length-RangeSlider_Text-input");
+let inputRangeText = document.getElementById(
+    "Option_Length-RangeSlider_Text-input"
+);
 let inputRefresh = document.getElementById("RanGen_Output-Reload");
 let checkboxUppercase = document.getElementById("Option_Uppercase-Checkbox");
 let checkboxLowercase = document.getElementById("Option_Lowercase-Checkbox");
@@ -80,14 +100,23 @@ let checkboxNumbers = document.getElementById("Option_Numbers-Checkbox");
 let checkboxSymbols = document.getElementById("Option_Symbols-Checkbox");
 let inputStartCharacters = document.getElementById("Option_Character-Start");
 let inputEndCharacters = document.getElementById("Option_Character-End");
-let checkboxUppercaseAlt = document.getElementById("Option_Uppercase-Checkbox--Alt__button");
-let checkboxLowercaseAlt = document.getElementById("Option_Lowercase-Checkbox--Alt__button");
-let checkboxNumbersAlt = document.getElementById("Option_Numbers-Checkbox--Alt__button");
-let checkboxSymbolsAlt = document.getElementById("Option_Symbols-Checkbox--Alt__button");
+let checkboxUppercaseAlt = document.getElementById(
+    "Option_Uppercase-Checkbox--Alt__button"
+);
+let checkboxLowercaseAlt = document.getElementById(
+    "Option_Lowercase-Checkbox--Alt__button"
+);
+let checkboxNumbersAlt = document.getElementById(
+    "Option_Numbers-Checkbox--Alt__button"
+);
+let checkboxSymbolsAlt = document.getElementById(
+    "Option_Symbols-Checkbox--Alt__button"
+);
 
 inputRange.addEventListener("input", (e) => {
     let range = e.target.value;
-    document.getElementById("Option_Length-RangeSlider_Text-input").value = range;
+    document.getElementById("Option_Length-RangeSlider_Text-input").value =
+        range;
     inputRange.style.setProperty(
         "--input-range-filled",
         `${inputRange.value / 2.095 + 2}%`
@@ -96,12 +125,20 @@ inputRange.addEventListener("input", (e) => {
 
 inputRange.addEventListener("change", (e) => {
     let range = e.target.value;
-    document.getElementById("Option_Length-RangeSlider_Text-input").value = range;
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
-})
+    document.getElementById("Option_Length-RangeSlider_Text-input").value =
+        range;
+    updateOutput(
+        range,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        GenStartCharacters,
+        GenEndCharacters
+    );
+});
 
 inputRangeText.addEventListener("change", (e) => {
-    
     range = e.target.value;
     document.getElementById("Option_Length-RangeSlider").value = range;
     let rangeText = e.target.value;
@@ -111,36 +148,66 @@ inputRangeText.addEventListener("change", (e) => {
         `${inputRange.value / 2.095 + 2}%`
     );
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+    updateOutput(
+        range,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        GenStartCharacters,
+        GenEndCharacters
+    );
 });
 
 inputRefresh.addEventListener("click", (e) => {
+    range = document.getElementById(
+        "Option_Length-RangeSlider_Text-input"
+    ).value;
 
-    range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
-
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+    updateOutput(
+        range,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        GenStartCharacters,
+        GenEndCharacters
+    );
 });
 
 checkboxUppercaseAlt.addEventListener("click", (e) => {
     switch (checkboxUppercase.checked) {
         case false:
             e.target.value = true;
-            checkboxUppercase.checked = true
-            document.getElementById('Option_Uppercase-Checkbox--Alt__check').style.visibility = "visible"
+            checkboxUppercase.checked = true;
+            document.getElementById(
+                "Option_Uppercase-Checkbox--Alt__check"
+            ).style.visibility = "visible";
             break;
         case true:
             e.target.value = false;
-            checkboxUppercase.checked = false
-            document.getElementById("Option_Uppercase-Checkbox--Alt__check").style.visibility = "hidden";
+            checkboxUppercase.checked = false;
+            document.getElementById(
+                "Option_Uppercase-Checkbox--Alt__check"
+            ).style.visibility = "hidden";
             break;
     }
 
-
     GenUppercase = checkboxUppercase.checked;
 
-    range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
+    range = document.getElementById(
+        "Option_Length-RangeSlider_Text-input"
+    ).value;
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols,  GenStartCharacters, GenEndCharacters);
+    updateOutput(
+        range,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        GenStartCharacters,
+        GenEndCharacters
+    );
 });
 
 checkboxLowercaseAlt.addEventListener("click", (e) => {
@@ -148,20 +215,34 @@ checkboxLowercaseAlt.addEventListener("click", (e) => {
         case false:
             e.target.value = true;
             checkboxLowercase.checked = true;
-            document.getElementById("Option_Lowercase-Checkbox--Alt__check").style.visibility = "visible";
+            document.getElementById(
+                "Option_Lowercase-Checkbox--Alt__check"
+            ).style.visibility = "visible";
             break;
         case true:
             e.target.value = false;
             checkboxLowercase.checked = false;
-            document.getElementById("Option_Lowercase-Checkbox--Alt__check").style.visibility = "hidden";
+            document.getElementById(
+                "Option_Lowercase-Checkbox--Alt__check"
+            ).style.visibility = "hidden";
             break;
     }
 
     GenLowercase = checkboxLowercase.checked;
 
-    range = document.getElementById("Option_Length-RangeSlider_Text-input").value;
+    range = document.getElementById(
+        "Option_Length-RangeSlider_Text-input"
+    ).value;
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols,  GenStartCharacters, GenEndCharacters);
+    updateOutput(
+        range,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        GenStartCharacters,
+        GenEndCharacters
+    );
 });
 
 checkboxNumbersAlt.addEventListener("click", (e) => {
@@ -188,7 +269,15 @@ checkboxNumbersAlt.addEventListener("click", (e) => {
         "Option_Length-RangeSlider_Text-input"
     ).value;
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols,  GenStartCharacters, GenEndCharacters);
+    updateOutput(
+        range,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        GenStartCharacters,
+        GenEndCharacters
+    );
 });
 
 checkboxSymbolsAlt.addEventListener("click", (e) => {
@@ -215,46 +304,102 @@ checkboxSymbolsAlt.addEventListener("click", (e) => {
         "Option_Length-RangeSlider_Text-input"
     ).value;
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols,  GenStartCharacters, GenEndCharacters);
+    updateOutput(
+        range,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        GenStartCharacters,
+        GenEndCharacters
+    );
 });
 
-
 inputStartCharacters.addEventListener("change", (e) => {
-    GenStartCharacters = e.target.value
+    GenStartCharacters = e.target.value;
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+    updateOutput(
+        range,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        GenStartCharacters,
+        GenEndCharacters
+    );
 });
 
 inputEndCharacters.addEventListener("change", (e) => {
-    GenEndCharacters = e.target.value
+    GenEndCharacters = e.target.value;
 
-    updateOutput(range, GenUppercase, GenLowercase, GenNumbers, GenSymbols, GenStartCharacters, GenEndCharacters);
+    updateOutput(
+        range,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        GenStartCharacters,
+        GenEndCharacters
+    );
 });
 
-function updateOutput(inRange, inUppercase, inLowercase, inNumbers, inSymbols, inStart, inEnd) {
-    GenLength = inRange
+function updateOutput(
+    inRange,
+    inUppercase,
+    inLowercase,
+    inNumbers,
+    inSymbols,
+    inStart,
+    inEnd
+) {
+    GenLength = inRange;
 
-    document.getElementById('RanGen_Output').value = gen64(GenLength, GenUppercase, GenLowercase, GenNumbers, GenSymbols, inStart, inEnd);
+    document.getElementById("RanGen_Output").value = gen64(
+        GenLength,
+        GenUppercase,
+        GenLowercase,
+        GenNumbers,
+        GenSymbols,
+        inStart,
+        inEnd
+    );
 
     document.getElementById("RanGen_Output").style.color = "var(--color-dark)";
-    document.getElementById("RanGen_Output").style.fontFamily = "var(--font-default)";
-    document.getElementById("Option_Length-RangeSlider_Text-input").style.color = "var(--color-dark)";
-    document.getElementById("Option_Length-RangeSlider_Text-input").style.fontFamily = "var(--font-default)";
+    document.getElementById("RanGen_Output").style.fontFamily =
+        "var(--font-default)";
+    document.getElementById(
+        "Option_Length-RangeSlider_Text-input"
+    ).style.color = "var(--color-dark)";
+    document.getElementById(
+        "Option_Length-RangeSlider_Text-input"
+    ).style.fontFamily = "var(--font-default)";
 
-    if (document.getElementById("Option_Length-Error").style.display == "flex") {
-        
-        const errorStyleDisplayNone = () => { document.getElementById("Option_Length-Error").style.display = "none" };
+    if (
+        document.getElementById("Option_Length-Error").style.display == "flex"
+    ) {
+        const errorStyleDisplayNone = () => {
+            document.getElementById("Option_Length-Error").style.display =
+                "none";
+        };
 
-        document.getElementById("Option_Length-Error").style.animationDelay = "3s";
+        document.getElementById("Option_Length-Error").style.animationDelay =
+            "3s";
         document.getElementById("Option_Length-Error").style.animation =
             "error-hidden var(--quinary-animation-speed) ease-in forwards";
-        setTimeout(errorStyleDisplayNone, 100)
+        setTimeout(errorStyleDisplayNone, 100);
     }
 
-    if (document.getElementById("Option_Character-Error").style.display == "flex") {
-        const errorStyleDisplayNone = () => { document.getElementById("Option_Character-Error").style.display = "none" };
+    if (
+        document.getElementById("Option_Character-Error").style.display ==
+        "flex"
+    ) {
+        const errorStyleDisplayNone = () => {
+            document.getElementById("Option_Character-Error").style.display =
+                "none";
+        };
 
-        document.getElementById("Option_Character-Error").style.animationDelay = "3s";
+        document.getElementById("Option_Character-Error").style.animationDelay =
+            "3s";
         document.getElementById("Option_Character-Error").style.animation =
             "error-hidden var(--quinary-animation-speed) ease-in forwards";
         setTimeout(errorStyleDisplayNone, 100);
@@ -262,24 +407,34 @@ function updateOutput(inRange, inUppercase, inLowercase, inNumbers, inSymbols, i
 
     const outputErrorSettings = () => {
         document.getElementById("RanGen_Output").value = "Invalid Input";
-        document.getElementById("RanGen_Output").style.color = "var(--color-error)";
-        document.getElementById("RanGen_Output").style.fontFamily = "var(--font-code)";
-    }
-    
-    if (GenLength > lengthLimit) {
+        document.getElementById("RanGen_Output").style.color =
+            "var(--color-error)";
+        document.getElementById("RanGen_Output").style.fontFamily =
+            "var(--font-code)";
+    };
 
-        document.getElementById("Option_Length-Error_Text").innerText = inputError(1, "length given");
+    if (GenLength > lengthLimit) {
+        document.getElementById("Option_Length-Error_Text").innerText =
+            inputError(1, "length given");
 
         outputErrorSettings();
 
-        document.getElementById("Option_Length-RangeSlider_Text-input").style.fontFamily = "var(--font-code)";
-        document.getElementById("Option_Length-RangeSlider_Text-input").style.color = "var(--color-error)"; 
+        document.getElementById(
+            "Option_Length-RangeSlider_Text-input"
+        ).style.fontFamily = "var(--font-code)";
+        document.getElementById(
+            "Option_Length-RangeSlider_Text-input"
+        ).style.color = "var(--color-error)";
         document.getElementById("Option_Length-Error").style.display = "flex";
         document.getElementById("Option_Length-Error").style.animation =
             "error var(--quinary-animation-speed) ease-in forwards";
     }
 
-    if (GenUppercase === false & GenLowercase === false && GenNumbers === false && GenSymbols === false) {
+    if (
+        (GenUppercase === false) & (GenLowercase === false) &&
+        GenNumbers === false &&
+        GenSymbols === false
+    ) {
         document.getElementById("Option_Character-Error_Text").innerText =
             inputError(0, "characters");
 
@@ -292,31 +447,30 @@ function updateOutput(inRange, inUppercase, inLowercase, inNumbers, inSymbols, i
     }
 }
 
-let uppercaseInputCheckbox = document.getElementById("Option_Uppercase-Checkbox");
-let uppercaseInputCheckboxAltButton = document.getElementById("Option_Uppercase-Checkbox--Alt__button");
-let uppercaseInputCheckboxAltCheck = document.getElementById("Option_Uppercase-Checkbox--Alt__check");
+let uppercaseInputCheckbox = document.getElementById(
+    "Option_Uppercase-Checkbox"
+);
+let uppercaseInputCheckboxAltButton = document.getElementById(
+    "Option_Uppercase-Checkbox--Alt__button"
+);
+let uppercaseInputCheckboxAltCheck = document.getElementById(
+    "Option_Uppercase-Checkbox--Alt__check"
+);
 
 function capitalize(input) {
-    return(
-        input.replace(/^./, (str) => str.toUpperCase())
-    )
+    return input.replace(/^./, (str) => str.toUpperCase());
 }
 
 function noSpaces(input) {
-    return (
-        input.replace(/\s+/g, "")
-    );
+    return input.replace(/\s+/g, "");
 }
 
 function noStartEndSpaces(input) {
-    return (
-        input.replace(/^\s+|\s+$/g, "")
-    ); 
+    return input.replace(/^\s+|\s+$/g, "");
 }
 
 function inputError(errorType, errorVersion) {
-
-    let errorT = errorType
+    let errorT = errorType;
     let errorV = noStartEndSpaces(errorVersion.toString());
 
     switch (errorType) {
@@ -330,18 +484,15 @@ function inputError(errorType, errorVersion) {
             errorT = "Error. Unspecified.";
     }
 
-    console.error(errorT)
+    console.error(errorT);
 
-    return (
-        errorT
-    );
+    return errorT;
 }
 
 function inputErrorStyle(elementSelectedType, elementSelected) {
-
     switch (elementSelectedType) {
         case "id":
-            document.getElementById(elementSelected)
+            document.getElementById(elementSelected);
             break;
     }
 
@@ -356,28 +507,40 @@ function inputErrorStyle(elementSelectedType, elementSelected) {
 }
 
 window.onload = () => {
-    document.getElementById("RanGen_Snack-Container--977543").style.display = "flex"
+    document.getElementById("RanGen_Snack-Container--977543").style.display =
+        "flex";
 
-    let snackbarClose = document.getElementById("RanGen_Snack-End_Button--977543")
-    const snackbarTimerTime = 10000
+    let snackbarClose = document.getElementById(
+        "RanGen_Snack-End_Button--977543"
+    );
+    const snackbarTimerTime = 10000;
 
     const snackbarDisplayNone = () => {
-        document.getElementById("RanGen_Snack-Container--977543").style.display = "none"
-    }
-    
+        document.getElementById(
+            "RanGen_Snack-Container--977543"
+        ).style.display = "none";
+    };
+
     const snackbarDisplayNoneAnimation = () => {
-        document.getElementById("RanGen_Snack--977543").style.animation = "snackbar-hidden var(--quinary-animation-speed) ease-in forwards";
-            setTimeout(snackbarDisplayNone, 100);
-    }
+        document.getElementById("RanGen_Snack--977543").style.animation =
+            "snackbar-hidden var(--quinary-animation-speed) ease-in forwards";
+        setTimeout(snackbarDisplayNone, 100);
+    };
 
     const snackbarOptionOneAction = () => {
-        document.getElementById("RanGen_Snack-Container--560392").style.display = "flex";
+        document.getElementById(
+            "RanGen_Snack-Container--560392"
+        ).style.display = "flex";
         snackbarDisplayNone();
-    }
+    };
 
-    snackbarClose.addEventListener("click", (e) => {snackbarDisplayNoneAnimation()});
+    snackbarClose.addEventListener("click", (e) => {
+        snackbarDisplayNoneAnimation();
+    });
 
-    document.getElementById("RanGen_Snack-Timer_Inner--977543").style.animationDuration = `${snackbarTimerTime}ms`
+    document.getElementById(
+        "RanGen_Snack-Timer_Inner--977543"
+    ).style.animationDuration = `${snackbarTimerTime}ms`;
 
     setTimeout(snackbarDisplayNoneAnimation, snackbarTimerTime);
-}
+};
