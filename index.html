@@ -5,6 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>RanGen</title>
+        <meta
+            name="description"
+            content="Create strings (text) of random characters, with chosen parameters. Can serve as random password, url ending, component id, etc."
+        />
         <link
             href="https://fonts.googleapis.com/css?family=League+Spartan&display=swap"
             rel="stylesheet"
@@ -81,6 +85,7 @@
                             <button
                                 class="icon__button"
                                 id="RanGen_Output-Reload"
+                                aria-label="regenerate string"
                             >
                                 <svg
                                     class="reload"
@@ -141,6 +146,7 @@
                                 class="icon__button"
                                 id="RanGen_Output-Copy_Clipboard"
                                 onclick="CopyGen64()"
+                                aria-label="copy string"
                             >
                                 <svg
                                     class="clipboard-copy"
@@ -384,6 +390,7 @@
                                                 <button
                                                     class="Checkbox--Alt__button"
                                                     id="Option_Uppercase-Checkbox--Alt__button"
+                                                    aria-label="uppercase letters checkbox"
                                                 >
                                                     <div
                                                         class="Checkbox--Alt__button--inside"
@@ -419,6 +426,7 @@
                                                 <button
                                                     class="Checkbox--Alt__button"
                                                     id="Option_Lowercase-Checkbox--Alt__button"
+                                                    aria-label="lowercase letter checkbox"
                                                 >
                                                     <div
                                                         class="Checkbox--Alt__button--inside"
@@ -455,6 +463,7 @@
                                                 <button
                                                     class="Checkbox--Alt__button"
                                                     id="Option_Numbers-Checkbox--Alt__button"
+                                                    aria-label="numbers checkbox"
                                                 >
                                                     <div
                                                         class="Checkbox--Alt__button--inside"
@@ -490,6 +499,7 @@
                                                 <button
                                                     class="Checkbox--Alt__button"
                                                     id="Option_Symbols-Checkbox--Alt__button"
+                                                    aria-label="symbols checkbox"
                                                 >
                                                     <div
                                                         class="Checkbox--Alt__button--inside"
@@ -605,10 +615,10 @@
                     class="RanGen__Snackbar--container"
                 >
                     <div id="RanGen_Snack--977543" class="RanGen__Snackbar">
-                        <button
+                        <!-- <button
                             id="RanGen_Snack-Start_Button--977543"
                             class="RanGen__Snackbar--start__button"
-                        ></button>
+                        ></button> -->
                         <div
                             id="RanGen_Snack-Start--977543"
                             class="RanGen__Snackbar--start"
@@ -627,6 +637,7 @@
                         <button
                             id="RanGen_Snack-End_Button--977543"
                             class="RanGen__Snackbar--end__button"
+                            aria-label="close message"
                         >
                             <svg
                                 width="14"
