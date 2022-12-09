@@ -288,12 +288,16 @@
                                             id="Option_Length-RangeSlider_Text"
                                             class="random__string--input__character--length__text"
                                         >
-                                            <p>Length:</p>
+                                            <label for="Option_Length-RangeSlider_Text-input"
+                                            >
+                                            Length:
+                                            </label>
                                             <input
                                                 id="Option_Length-RangeSlider_Text-input"
                                                 type="number"
                                                 min="0"
                                                 max="200"
+                                                aria-label="alternate string length input"
                                             />
                                         </div>
                                         <input
@@ -302,6 +306,7 @@
                                             min="0"
                                             max="200"
                                             value="12"
+                                            aria-label="string length slider"
                                         />
                                     </div>
                                     <!-- <div  id="Option_Length-Error" class="random__string--input__character--length__error">
