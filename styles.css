@@ -660,7 +660,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     flex-grow: 0;
 }
 
-.random__string--input__character--length__text p {
+.random__string--input__character--length__text label {
     display: flex;
     align-items: center;
     height: 24rem;
